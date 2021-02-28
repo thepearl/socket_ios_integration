@@ -8,7 +8,7 @@ connection = [];
 server.listen(process.env.PORT || 3000);
 console.log('Server is running ..');
 
-io.sockets.on('connection',function (socket){
+io.sockets.on('connection', function (socket){
     connection.push(socket);
     console.log('Connect: %s sockets are connected', connection.length);
 
@@ -22,4 +22,4 @@ io.sockets.on('connection',function (socket){
         console.log(data);
         io.sockets.emit('iOS Client', {msg: 'Hi iOS Client'});
     });
-} );
+});
